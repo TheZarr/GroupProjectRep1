@@ -1,0 +1,14 @@
+#myimage {
+    width: 200px;
+    height: 100px;
+    float: left;
+    position: relative;
+    margin: 10px 15px 15px 10px;
+}
+#navBar {
+    background-color: rgb(51, 51, 51);
+
+}
+body {
+    background-color: rgb(127, 127, 127 )
+}
