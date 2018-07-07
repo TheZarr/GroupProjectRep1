@@ -3,7 +3,6 @@ var startDate = "20180901";
 var endDate = "20180905";
 var startDateFormatted = "20180901";
 var endDateFormatted = "20180905";
-var i = 10;
 
 $("#user-submit").on('click', function (event) {
   event.preventDefault()
@@ -32,26 +31,41 @@ function eventCall() {
   //api key for eventful = pXWvVZ6KKRfSxk4R
   //date format on eventful: &t=2018072100-2018072823 (YYYYMMDD-YYYYMMDD)
 
-  var eventQueryURL = "https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=pXWvVZ6KKRfSxk4R&location=" + destination + "&t=" + startDateFormatted + "00-" + endDateFormatted + "00";
+  var eventQueryURL = "https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=pXWvVZ6KKRfSxk4R&category=music,movies_film,fundraisers,art,attractions,singles_social,outdoors_recreation,performing_arts,animals&location=" + destination + "&t=" + startDateFormatted + "00-" + endDateFormatted + "00&page_size=10";
 
   $.ajax({
     url: eventQueryURL,
     method: "GET"
   })
     .then(function (response) {
+      response = JSON.parse(response);
       console.log(response);
-      console.log(response.events.event[0].postal_code);
+
+      for (var i = 0; i < 10; i++){
+        var event = $("<p>");
+        var e = $("<a>");
+        var time = response.events.event[i].start_time;
+        timeArray = time.split(" ");
+        var date = moment(timeArray[0]).format("MM-DD");
+        var startTime = moment(timeArray[1], "HH:mm:ss").format("h:mm a");
+        
+        console.log(date);
+        console.log(startTime);
+        console.log(timeArray);
+        // console.log(time);
+        e.text(response.events.event[i].title);
+        e.addClass("card-text");
+        e.attr("href", response.events.event[i].url);
+        event.append(e);
+        event.append("- " + date + " " + startTime);
+        $("#events").append(event);
+        }
+
     }).catch(function (err) {
       console.log(err);
     });
 
-// for (var i = 0; i = 10; i++){
 
-var e = $("<p>");
-e.addClass("card-text");
-e.text("Hey");
-$("#events").append(e);
-// }
 }
 
 
@@ -75,6 +89,18 @@ function yelpCallHotel() {
   })
     .then(function (response) {
       console.log(response);
+      // console.log(response.businesses[0].name);
+
+      for (var i = 0; i < 10; i++){
+        var item = $("<p>");
+        var e = $("<a>");
+        e.text(response.businesses[i].name);
+        e.addClass("card-text");
+        e.attr("href", response.businesses[i].url);
+        item.append(e);
+        $("#hotels").append(item);
+        }
+
     }).catch(function (err) {
       console.log(err);
     });
@@ -98,11 +124,22 @@ function yelpCallRest() {
       "Authorization": "Bearer " + apiKeyYelp
     }
   })
-    .then(function (response2) {
-      console.log(response2);
+    .then(function (response) {
+      console.log(response);
+
+      for (var i = 0; i < 10; i++){
+        var item = $("<p>");
+        var e = $("<a>");
+        e.text(response.businesses[i].name);
+        e.addClass("card-text");
+        e.attr("href", response.businesses[i].url);
+        item.append(e);
+        $("#restaurants").append(item);
+        }
     }).catch(function (err) {
       console.log(err);
     });
 }
+
 
 
