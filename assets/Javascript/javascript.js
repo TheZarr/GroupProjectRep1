@@ -57,3 +57,16 @@ $.ajax({
 //   });
   
 })
+
+// // Roating imates for Jumbotron
+// var images = ["./assets/images/jumbotron_1.jpg", "./assets/images/jumbotron_2.jpg", "./assets/images/jumbotron_3.jpg", "./assets/images/jumbotron_4.jpg", "./assets/images/jumbotron_5.jpg", "./assets/images/jumbotron_6.jpg", "./assets/images/jumbotron_7.jpg", "./assets/images/jumbotron_8.jpg", "./assets/images/jumbotron_9.jpg", "./assets/images/jumbotron_10.jpg"];
+// nextImage = 0;
+
+// setInterval(function () {
+//  if (nextImage === images.length) {
+//    nextImage = 0
+//  }
+//  console.log(images[nextImage]);
+//  $("#jumboPic").attr("src", images[nextImage])//instead of changing the src of the img in the html change the src of the image on the css for the jumbotro class  google jquery change css styling
+//  nextImage++;
+// }, 5000)
