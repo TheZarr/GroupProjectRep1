@@ -140,6 +140,3 @@ function yelpCallRest() {
       console.log(err);
     });
 }
-
-
-
