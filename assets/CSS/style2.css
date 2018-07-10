@@ -4,8 +4,9 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
  */
 
-body {
-  padding-top: 54px;
+#body {
+  padding: 75px 50px 50px 50px;
+  background-color: #7F7F7F;
 }
 
 /* @media (min-width: 992px) {
@@ -28,4 +29,19 @@ body {
   margin-bottom: 30px;
 } */
 
-  
+.hotel-card-icon {
+  position: absolute;
+  top: -60px;
+}
+
+.card-heading-height {
+  height: 60px;
+}
+
+.my-footer{
+  padding: 100px;
+}
+
+.picture{
+  height: 500px;
+}
