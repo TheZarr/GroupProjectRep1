@@ -32,7 +32,6 @@
 .hotel-card-icon {
   position: absolute;
   top: -60px;
-  height: 35%;
 }
 
 .card-heading-height {
@@ -41,4 +40,8 @@
 
 .my-footer{
   padding: 100px;
+}
+
+.picture{
+  height: 500px;
 }
