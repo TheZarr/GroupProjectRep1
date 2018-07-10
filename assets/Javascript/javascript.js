@@ -1,8 +1,13 @@
-var destination = "Atlanta";
-var startDate = "20180901";
-var endDate = "20180905";
-var startDateFormatted = "20180901";
-var endDateFormatted = "20180905";
+var destination = "";
+var startDate = "";
+var endDate = "";
+var startDateFormatted = "";
+var endDateFormatted = "";
+
+// var bodyForm = document.getElementById("body");
+// bodyForm.style.display = "hidden";
+
+$("#body").hide();
 
 $("#user-submit").on('click', function (event) {
   event.preventDefault()
@@ -11,20 +16,35 @@ $("#user-submit").on('click', function (event) {
   destination = $("#travelDestinationInput").val().trim();
   startDate = $("#startDateInput").val().trim();
   endDate = $("#endDateInput").val().trim();
-  // console.log(destination);
-  // console.log(startDate);
-  // console.log(endDate);
+  console.log(destination);
+  console.log(startDate);
+  console.log(endDate);
 
   startDateFormatted = moment(startDate).format("YYYYMMDD");
   endDateFormatted = moment(endDate).format("YYYYMMDD");
-  // console.log(startDateFormatted);
-  // console.log(endDateFormatted);
- 
+  console.log(startDateFormatted);
+  console.log(endDateFormatted);
+
+  eventCall();
+  yelpCallHotel();
+  yelpCallRest();
+
+  // var tripForm = document.getElementById("tripForm");
+
+  // tripForm.style.display = "none";
+
+  $("#tripForm").hide();
+  $("#body").show();
+
 })
 
-eventCall();
-yelpCallHotel();
-yelpCallRest();
+
+// $("#moreOptions").on('click', function(){
+
+
+
+// })
+
 
 function eventCall() {
 
@@ -42,22 +62,26 @@ function eventCall() {
       console.log(response);
 
       for (var i = 0; i < 10; i++){
+        var check = $("<input>", {type: 'checkbox', id: 'event' + i});
         var event = $("<p>");
         var e = $("<a>");
+        var eventInfo = $("<p>");
         var time = response.events.event[i].start_time;
         timeArray = time.split(" ");
         var date = moment(timeArray[0]).format("MM-DD");
         var startTime = moment(timeArray[1], "HH:mm:ss").format("h:mm a");
-        
-        console.log(date);
-        console.log(startTime);
-        console.log(timeArray);
+        eventInfo.addClass("info");
+        // console.log(date);
+        // console.log(startTime);
+        // console.log(timeArray);
         // console.log(time);
         e.text(response.events.event[i].title);
         e.addClass("card-text");
         e.attr("href", response.events.event[i].url);
         event.append(e);
-        event.append("- " + date + " " + startTime);
+        event.prepend(check);
+        eventInfo.append("- " + date + " " + startTime);
+        event.append(eventInfo);
         $("#events").append(event);
         }
 
@@ -67,7 +91,6 @@ function eventCall() {
 
 
 }
-
 
 function yelpCallHotel() {
 
@@ -79,7 +102,7 @@ function yelpCallHotel() {
 
   var apiKeyYelp = "w9W8FixtEsCBFVIOO3FGXPzz9cVEiOI7enTexK1ROsh5WHykbeEFJzovwpgELKVU0LdpfhC6RLKyNCa__Pqi9nXD0bVP90ZcVY2NU5La1t5yionbla1iImv9qP87W3Yx"
   
-  var hotelQueryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=hotels&location=Atlanta" //businesses/search?term=restaurants&destination=" + destination + "&API_KEY=w9W8FixtEsCBFVIOO3FGXPzz9cVEiOI7enTexK1ROsh5WHykbeEFJzovwpgELKVU0LdpfhC6RLKyNCa__Pqi9nXD0bVP90ZcVY2NU5La1t5yionbla1iImv9qP87W3Yx";
+  var hotelQueryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=hotels&location=" + destination; //businesses/search?term=restaurants&destination=" + destination + "&API_KEY=w9W8FixtEsCBFVIOO3FGXPzz9cVEiOI7enTexK1ROsh5WHykbeEFJzovwpgELKVU0LdpfhC6RLKyNCa__Pqi9nXD0bVP90ZcVY2NU5La1t5yionbla1iImv9qP87W3Yx";
   $.ajax({
     method: "GET",
     url: hotelQueryURL,
@@ -92,13 +115,19 @@ function yelpCallHotel() {
       // console.log(response.businesses[0].name);
 
       for (var i = 0; i < 10; i++){
+        var check = $("<input>", {type: 'checkbox', id: 'hotel' + i});
         var item = $("<p>");
         var e = $("<a>");
+        var rating = response.businesses[i].rating;
+        item.addClass("info");
         e.text(response.businesses[i].name);
         e.addClass("card-text");
         e.attr("href", response.businesses[i].url);
         item.append(e);
+        item.prepend(check);
+        item.append(rating + "/5 stars");
         $("#hotels").append(item);
+        
         }
 
     }).catch(function (err) {
@@ -116,7 +145,7 @@ function yelpCallRest() {
 
   var apiKeyYelp = "w9W8FixtEsCBFVIOO3FGXPzz9cVEiOI7enTexK1ROsh5WHykbeEFJzovwpgELKVU0LdpfhC6RLKyNCa__Pqi9nXD0bVP90ZcVY2NU5La1t5yionbla1iImv9qP87W3Yx"
   
-  var restQueryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=restaurants&location=Atlanta" //businesses/search?term=restaurants&destination=" + destination + "&API_KEY=w9W8FixtEsCBFVIOO3FGXPzz9cVEiOI7enTexK1ROsh5WHykbeEFJzovwpgELKVU0LdpfhC6RLKyNCa__Pqi9nXD0bVP90ZcVY2NU5La1t5yionbla1iImv9qP87W3Yx";
+  var restQueryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=restaurants&location=" + destination; //businesses/search?term=restaurants&destination=" + destination + "&API_KEY=w9W8FixtEsCBFVIOO3FGXPzz9cVEiOI7enTexK1ROsh5WHykbeEFJzovwpgELKVU0LdpfhC6RLKyNCa__Pqi9nXD0bVP90ZcVY2NU5La1t5yionbla1iImv9qP87W3Yx";
   $.ajax({
     method: "GET",
     url: restQueryURL,
@@ -128,18 +157,23 @@ function yelpCallRest() {
       console.log(response);
 
       for (var i = 0; i < 10; i++){
+        var check = $("<input>", {type: 'checkbox', id: 'rest' + i});
         var item = $("<p>");
         var e = $("<a>");
         e.text(response.businesses[i].name);
         e.addClass("card-text");
         e.attr("href", response.businesses[i].url);
         item.append(e);
+        item.prepend(check);
         $("#restaurants").append(item);
+        var restInfo = $("<p>");
+        for(var j = 0; j < response.businesses[i].categories.length; j++){
+          restInfo.append(response.businesses[i].categories[j].alias + " "); 
+        }
+        restInfo.addClass("info");
+        item.append(restInfo);
         }
     }).catch(function (err) {
       console.log(err);
     });
 }
-
-
-

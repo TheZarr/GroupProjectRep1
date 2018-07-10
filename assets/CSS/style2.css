@@ -32,7 +32,7 @@
 .hotel-card-icon {
   position: absolute;
   top: -60px;
-  height: 35%;
+  height: 100px;
 }
 
 .card-heading-height {
@@ -42,3 +42,7 @@
 .my-footer{
   padding: 100px;
 }
+/* 
+.info {
+  float: right;
+} */

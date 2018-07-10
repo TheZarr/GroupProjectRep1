@@ -175,6 +175,29 @@
         </div>
 
         <!-- Body Section -->
+        <form id="tripForm">
+          <div class="col-lg-2 col-med-2"></div>
+              <div class="col-lg-8 col-med-9">
+                  <div class="form-group">
+                      <label for="startDate">Start Date</label>
+                      <input type="text" class="form-control" id="startDateInput" aria-describedby="emailHelp" placeholder="Enter email">
+                      <small id="startdateHelp" class="form-text text-muted">Let us know your Start Date.</small>
+                  </div>
+                  <div class="form-group">
+                      <label for="endDate">End Date</label>
+                      <input type="text" class="form-control" id="endDateInput" aria-describedby="emailHelp" placeholder="Enter email">
+                      <small id="enddateHelp" class="form-text text-muted">Let us know your End Date.</small>
+                      </div>
+                  <div class="form-group">
+                      <label for="travelDestination">Travel Destination</label>
+                      <input type="text" class="form-control" id="travelDestinationInput" placeholder="Zipcode">
+                  </div>
+                  <button type="submit" class="btn btn-primary" id="user-submit" >Submit</button>
+                  
+              </div>    
+                  <div class="col-lg-2 col-med-2"></div>
+        </form>
+
         <div class="row" id="body">
             <div class="col-lg-4 mb-4">
                 <div class="card h-100">
@@ -187,7 +210,7 @@
                         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                        <a href="#" class="btn btn-primary" id="moreOptions">More Options</a>
                     </div>
                 </div>
             </div>
@@ -205,7 +228,7 @@
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
                         </div>
                         <div class="card-footer">
-                            <a href="#" class="btn btn-primary">Events</a>
+                            <a href="#" class="btn btn-primary" id="moreOptions">More Options</a>
                         </div>
                     </div>
                 </div>
@@ -221,35 +244,13 @@
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
                             </div>
                             <div class="card-footer">
-                                <a href="#" class="btn btn-primary">Events</a>
+                                <a href="#" class="btn btn-primary" id="moreOptions">More Options</a>
                             </div>
                         </div>
                     </div>
             <!-- closes row "Body"-->
         </div>
         
-        <form>
-            <div class="col-lg-2 col-med-2"></div>
-                <div class="col-lg-8 col-med-9">
-                    <div class="form-group">
-                        <label for="startDate">Start Date</label>
-                        <input type="text" class="form-control" id="startDateInput" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="startdateHelp" class="form-text text-muted">Let us know your Start Date.</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="endDate">End Date</label>
-                        <input type="text" class="form-control" id="endDateInput" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="enddateHelp" class="form-text text-muted">Let us know your End Date.</small>
-                        </div>
-                    <div class="form-group">
-                        <label for="travelDestination">Travel Destination</label>
-                        <input type="text" class="form-control" id="travelDestinationInput" placeholder="Zipcode">
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="user-submit" >Submit</button>
-                    
-                </div>    
-                    <div class="col-lg-2 col-med-2"></div>
-          </form>
 
         <!-- Footer -->
         <footer class="py-5 bg-dark my-footer">
