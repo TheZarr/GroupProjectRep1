@@ -36,6 +36,7 @@ $("#user-submit").on('click', function (event) {
   $("#tripForm").hide();
   $("#body").show();
 
+<<<<<<< HEAD
 })
 
 
@@ -177,3 +178,19 @@ function yelpCallRest() {
       console.log(err);
     });
 }
+=======
+      for (var i = 0; i < 10; i++){
+        var item = $("<p>");
+        var e = $("<a>");
+        e.text(response.businesses[i].name);
+        e.addClass("card-text");
+        e.attr("href", response.businesses[i].url);
+        item.append(e);
+        $("#restaurants").append(item);
+        }
+    }).catch(function (err) {
+      console.log(err);
+    });
+}
+
+>>>>>>> 2b4d254621dd056392ca64d958939d4b4a3da8ed
