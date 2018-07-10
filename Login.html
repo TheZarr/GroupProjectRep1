@@ -1,0 +1,107 @@
+<Html>
+<head>
+    <meta charset="UTF-8">
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/stylesLog.css">
+    <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet">
+    
+    <title>Login Page</title>
+</head>
+<body >
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <div class="container">
+                    <img src="assets/images/Logo_iTravel-02.png">
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="Login.html">Login/Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="mysaved.html">My Saved Trips</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Externallinks.html">External Links</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="AboutUS.html">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="index.html">Home</a>
+                          </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav> 
+    <div class="body"></div>
+    <div class="grad"></div>
+    <div class="header">
+        <div id="plsLog">Please <br><span>Login</span></div>
+    </div>
+    <br>
+    <form name="login">
+        <div class="login">
+            <input type="text" placeholder="UserName" name="userid"><br>
+            <input type="password" placeholder="Password" name="pswrd"><br>
+            <input type="button" onclick="check(this.form)" name="Login"/> <br>
+        </div>
+
+    </form>
+    <br><br>
+    
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" id="regbutt" data-toggle="modal" data-target="#exampleModal">
+    Register
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Registration</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+        <div class="modal-body">
+                
+                        <div class="form-group">
+                            <label for="exampleInputName">Name</label>
+                            <input type="name" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="Enter Your Name">
+                            <small id="nameHelp" class="form-text text-muted">We'll never share your Information with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Email address</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                          <small id="emailHelp" class="form-text text-muted">We'll never share your Email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" id="regbutton">Submit</button>
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./assets/Javascript/javascriptLog.js"></script>
+    
+</body>
+
+
+
+</Html>
