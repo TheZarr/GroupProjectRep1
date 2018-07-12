@@ -10,17 +10,17 @@ body {
         margin-right: 0;
         padding-left: 40px;
     }
+
     #savedHotel   {
         border: 1px solid black;
         background-color: white;
     }
-    #savedRest{
+   
+    #savedEvent {
         border: 1px solid black;
         background-color: white;
     }
- 
- 
-    #savedEvent {
+    #savedRest{
         border: 1px solid black;
         background-color: white;
     }

@@ -3,6 +3,9 @@ var startDate = "";
 var endDate = "";
 var startDateFormatted = "";
 var endDateFormatted = "";
+var hotelArray = [];
+var eventArray = [];
+var restArray = [];
 
 // var bodyForm = document.getElementById("body");
 // bodyForm.style.display = "hidden";
@@ -16,9 +19,9 @@ $("#user-submit").on('click', function (event) {
   destination = $("#travelDestinationInput").val().trim();
   startDate = $("#startDateInput").val().trim();
   endDate = $("#endDateInput").val().trim();
-  console.log(destination);
-  console.log(startDate);
-  console.log(endDate);
+  // console.log(destination);
+  // console.log(startDate);
+  // console.log(endDate);
 
   startDateFormatted = moment(startDate).format("YYYYMMDD");
   endDateFormatted = moment(endDate).format("YYYYMMDD");
@@ -29,14 +32,47 @@ $("#user-submit").on('click', function (event) {
   yelpCallHotel();
   yelpCallRest();
 
-  // var tripForm = document.getElementById("tripForm");
-
-  // tripForm.style.display = "none";
-
   $("#tripForm").hide();
   $("#body").show();
 
 })
+
+ $("#save-restaurants").on('click', function(event){
+  event.preventDefault();
+
+    for (i = 0;i <10; i++){
+    if ($("#rest" +i).is(':checked')){
+      restArray.push($("#rest" + i).data('rest'));
+    }
+  }
+  localStorage.setItem('restaurants', JSON.stringify(restArray));
+  console.log(hotelArray);
+  })
+
+  $("#save-hotels").on('click', function(event){
+    event.preventDefault();
+
+    for (i = 0;i <10; i++){
+      if ($("#hotel" +i).is(':checked')){
+        hotelArray.push($("#hotel" + i).data('hotel'));
+      }
+    }
+    localStorage.setItem('hotels', JSON.stringify(hotelArray));
+    console.log(hotelArray);
+  })
+  
+$("#save-events").on('click', function(event){
+    event.preventDefault();
+  
+    for (i = 0;i < 10; i++){
+      if ($("#event" + i).is(':checked')){
+        eventArray.push($("#event" + i).data('event'));
+        
+      }
+    }
+    localStorage.setItem('events', JSON.stringify(eventArray));
+    console.log(eventArray);
+  })
 
 
 // $("#moreOptions").on('click', function(){
@@ -59,11 +95,13 @@ function eventCall() {
   })
     .then(function (response) {
       response = JSON.parse(response);
-      console.log(response);
+      // console.log(response);
 
       for (var i = 0; i < 10; i++){
         var check = $("<input>", {type: 'checkbox', id: 'event' + i});
         var event = $("<p>");
+        check.data('event', response.events.event[i]);
+        // event.attr("id","eventID" + i);
         var e = $("<a>");
         var eventInfo = $("<p>");
         var time = response.events.event[i].start_time;
@@ -117,6 +155,7 @@ function yelpCallHotel() {
       for (var i = 0; i < 10; i++){
         var check = $("<input>", {type: 'checkbox', id: 'hotel' + i});
         var item = $("<p>");
+        check.data('hotel', response.businesses[i]);
         var e = $("<a>");
         var rating = response.businesses[i].rating;
         item.addClass("info");
@@ -154,10 +193,11 @@ function yelpCallRest() {
     }
   })
     .then(function (response) {
-      console.log(response);
+      // console.log(response);
 
       for (var i = 0; i < 10; i++){
         var check = $("<input>", {type: 'checkbox', id: 'rest' + i});
+        check.data('rest', response.businesses[i]);
         var item = $("<p>");
         var e = $("<a>");
         e.text(response.businesses[i].name);
@@ -177,3 +217,4 @@ function yelpCallRest() {
       console.log(err);
     });
 }
+
