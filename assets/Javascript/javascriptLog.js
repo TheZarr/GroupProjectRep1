@@ -37,6 +37,10 @@ console.log(nameInput);
 console.log(emailInput);
 console.log(pwInput);
 
+localStorage.setItem('userName', nameInput);
+localStorage.setItem('userEmail', emailInput);
+localStorage.setItem('password', pwInput);
+
 // Creates local "temporary" object for holding train data
 
 var newUser = {
