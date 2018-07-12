@@ -1,5 +1,8 @@
 
   $(document).ready(function(){
+    // var userName = localStorage.getItem('userName');
+    // var userEmail = localStorage.getItem('userEmail');
+    // $("#whatsUp").text("Hey " + userName + ", here's what you have saved so far!");
 
     var hotelChoices = localStorage.getItem("hotels");
     var parsedHotels = JSON.parse(hotelChoices);
