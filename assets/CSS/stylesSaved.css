@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(127, 127, 127 )}
+ 
+ .ol {
+        display: block;
+        list-style-type: decimal;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 40px;
+    }
+    #savedHotel   {
+        border: 1px solid black;
+        background-color: white;
+    }
+    #savedRest{
+        border: 1px solid black;
+        background-color: white;
+    }
+ 
+ 
+    #savedEvent {
+        border: 1px solid black;
+        background-color: white;
+    }

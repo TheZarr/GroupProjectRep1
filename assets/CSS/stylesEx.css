@@ -1,0 +1,36 @@
+/* #myimage {
+    width: 200px;
+    height: 100px;
+    float: left;
+    position: relative;
+    margin: 10px 15px 15px 10px;
+ }
+ #navBar {
+    background-color: rgb(51, 51, 51);
+ 
+ } */
+ body {
+    background-color: rgb(127, 127, 127 )}
+
+.ol {
+        display: block;
+        list-style-type: decimal;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 40px;
+    }
+
+    #exLinkHotel {
+        border: 1px solid black;
+        background-color: white;
+    }
+    #exLinkCar {
+        border: 1px solid black;
+        background-color: white;
+    }
+    #exLinkWeather {
+        border: 1px solid black;
+        background-color: white;
+    }

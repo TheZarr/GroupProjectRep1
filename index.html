@@ -25,17 +25,20 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="???">My Saved Trips</a>
+                            <a class="nav-link" href="Login.html">Login/Register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="???">External Links</a>
+                            <a class="nav-link" href="mysaved.html">My Saved Trips</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="???">Link</a>
+                            <a class="nav-link" href="Externallinks.html">External Links</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="???">About Us</a>
+                            <a class="nav-link" href="AboutUS.html">About Us</a>
                         </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="index.html">Home</a>
+                      </li>
                     </ul>
                 </div>
             </div>
@@ -56,8 +59,6 @@
                             <li data-target="#my-slider" data-slide-to="4"></li>
                             <li data-target="#my-slider" data-slide-to="5"></li>
                             <li data-target="#my-slider" data-slide-to="6"></li>
-                            <li data-target="#my-slider" data-slide-to="7"></li>
-                            <li data-target="#my-slider" data-slide-to="8"></li>
                         </ol>
 
                         <!-- wrapper for slides-->
@@ -67,49 +68,49 @@
                             <div class="carousel-item active picture">
                                     <img src="assets/images/Slider-1.jpg" alt="firstImage">
                                     <div class="carousel-caption">
-                                        <h1>Test</h1>
+                                        <h1>Montana</h1>
                                     </div>
                                 </div>
 
                             <div class="carousel-item picture">
                                 <img src="assets/images/slider-2.jpg" alt="firstImage">
                                 <div class="carousel-caption">
-                                    <h1>Test</h1>
+                                    <h1>New York, New York</h1>
                                 </div>
                             </div>
                             
                         <div class="carousel-item picture">
                             <img src="assets/images/Slider-3.jpg" alt="firstImage">
                             <div class="carousel-caption">
-                                <h1>Test</h1>
+                                <h1>Rocky Mountain National Park, Colorado</h1>
                             </div>
                         </div>
 
                         <div class="carousel-item picture">
                             <img src="assets/images/Slider-4.jpg" alt="firstImage">
                             <div class="carousel-caption">
-                                <h1>Test</h1>
+                                <h1>Grand Canyon National Park</h1>
                             </div>
                         </div>
                         
                         <div class="carousel-item picture">
                             <img src="assets/images/Slider-5.jpg" alt="firstImage">
                             <div class="carousel-caption">
-                                <h1>Test</h1>
+                                <h1>San Francisco, California</h1>
                             </div>
                         </div>
 
                         <div class="carousel-item picture">
                             <img src="assets/images/Slider-6.jpg" alt="firstImage">
                             <div class="carousel-caption">
-                                <h1>Test</h1>
+                                <h1>Best European Destination 2014</h1>
                             </div>
                         </div>
 
                         <div class="carousel-item picture">
                             <img src="assets/images/Slider-8.jpg" alt="firstImage">
                             <div class="carousel-caption">
-                                <h1>Test</h1>
+                                <h1>Jamaica </h1>
                             </div>
                         </div>
 
@@ -130,9 +131,47 @@
             </div>
         </div>
 
-        <!-- Body Section -->
-        <div class="row" id="body">
+        <!--Search form -->
+        <div class="row search-form" id="tripForm">
+            <div class="col-lg-2 col-med-2"></div>
+                <div class="col-lg-8 col-lg-8 card">
+                    <div class="card-header">
+                        <h4>Start Your Search</h4>
+                    </div>
+                        
+                    <div class="card-body">
+                        <form >
+                            <div class="form-group">
+                                <label for="startDate">Start Date</label>
+                                <input type="text" class="form-control" id="startDateInput" aria-describedby="emailHelp" placeholder="Start Date">
+                                <small id="startdateHelp" class="form-text text-muted">Let us know your Start Date.</small>
+                            </div>
+                                        
+                            <div class="form-group">
+                                <label for="endDate">End Date</label>
+                                <input type="text" class="form-control" id="endDateInput" aria-describedby="emailHelp" placeholder="End Date">
+                                <small id="enddateHelp" class="form-text text-muted">Let us know your End Date.</small>
+                            </div>
+                                        
+                            <div class="form-group">
+                            <label for="travelDestination">Travel Destination</label>
+                            <input type="text" class="form-control" id="travelDestinationInput" placeholder="Zip Code">
+                            </div>
+                    <!-- closes card body -->
+                    </div>
+                            <div class="card-footer">            
+                                <button type="submit" class="btn btn-primary" id="user-submit" >Submit</button>     
+                            </div>       
+                        </form>
+                <!-- closes card         -->
+                </div>        
+            <div class="col-lg-2 col-med-2"></div>
+        <!-- closes Form row     -->
+        </div>
 
+
+        <!-- three body divs -->
+        <div class="row" id="body">
             <div class="col-lg-4 mb-4">
                 <div class="card h-100">
                         <!-- align-items-end, center or start to align vertically -->
@@ -141,10 +180,10 @@
                         <h4>Hotels</h4>
                     </div>
                     <div class="card-body" id="hotels">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Learn More</a>
+                        <a href="#" class="btn btn-primary" id="moreOptions">More Options</a>
                     </div>
                 </div>
             </div>
@@ -152,20 +191,19 @@
 
 
             <div class="col-lg-4 mb-4">
-                    <div class="card h-100">
-                            <!-- align-items-end, center or start to align vertically -->
-                        <div class="card-header p-0 d-flex align-items-end justify-content-center card-heading-height">
-                            <img src="assets/images/Icon-Rest.png" class="hotel-card-icon">
-                            <h4>Restaurants</h4>
-                        </div>
-                        <div class="card-body" id="restaurants">
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="#" class="btn btn-primary">Events</a>
-                        </div>
+                <div class="card h-100">
+                    <!-- align-items-end, center or start to align vertically -->
+                    <div class="card-header p-0 d-flex align-items-end justify-content-center card-heading-height">
+                        <img src="assets/images/Icon-Rest.png" class="hotel-card-icon">
+                        <h4>Restaurants</h4>
+                    </div>
+                    <div class="card-body" id="restaurants">
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary" id="moreOptions">More Options</a>
                     </div>
                 </div>
+            </div>
 
                 <div class="col-lg-4 mb-4">
                         <div class="card h-100">
@@ -175,40 +213,16 @@
                                 <h4>Events</h4>
                             </div>
                             <div class="card-body" id="events">
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+
                             </div>
                             <div class="card-footer">
-                                <a href="#" class="btn btn-primary">Events</a>
+                                <a href="#" class="btn btn-primary" id="moreOptions">More Options</a>
                             </div>
                         </div>
                     </div>
 
             <!-- closes row "Body"-->
         </div>
-        
-        <form>
-            <div class="row">
-                <div class="col-lg-4 col-med-2 my-form"></div>
-                    <div class="col-lg-4 col-med-9">
-                        <div class="form-group">
-                            <label for="startDate">Start Date</label>
-                            <input type="text" class="form-control" id="startDateInput" aria-describedby="emailHelp" placeholder="Enter email">
-                            <small id="startdateHelp" class="form-text text-muted">Let us know your Start Date.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="endDate">End Date</label>
-                            <input type="text" class="form-control" id="endDateInput" aria-describedby="emailHelp" placeholder="Enter email">
-                            <small id="enddateHelp" class="form-text text-muted">Let us know your End Date.</small>
-                            </div>
-                        <div class="form-group">
-                            <label for="travelDestination">Travel Destination</label>
-                            <input type="text" class="form-control" id="travelDestinationInput" placeholder="Zipcode">
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="user-submit" >Submit</button> 
-                    </div>    
-                <div class="col-lg-4 col-med-2"></div>
-            </div>
-          </form>
 
         <!-- Footer -->
         <footer class="py-5 bg-dark my-footer">
@@ -227,6 +241,7 @@
             crossorigin="anonymous"></script>
         <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
         <script defer src="assets/Javascript/javascript.js"></script>
     </body>
 
