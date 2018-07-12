@@ -34,8 +34,7 @@ $("#user-submit").on('click', function (event) {
 
   $("#tripForm").hide();
   $("#body").show();
-  
- 
+
 })
 
  $("#save-restaurants").on('click', function(event){

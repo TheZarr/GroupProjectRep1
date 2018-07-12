@@ -1,33 +1,13 @@
-/*!
- * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
- * Copyright 2013-2017 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
- */
+.search-form {
+  background-color: #7F7F7F;
+}
 
 #body {
   padding: 75px 50px 50px 50px;
   background-color: #7F7F7F;
 }
 
-/* @media (min-width: 992px) {
-  body {
-    padding-top: 56px;
-  }
-} */
 
-/* .carousel-item {
-  height: 65vh;
-  min-height: 300px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.portfolio-item {
-  margin-bottom: 30px;
-} */
 
 .hotel-card-icon {
   position: absolute;
@@ -41,10 +21,7 @@
 .my-footer{
   padding: 100px;
 }
-/* 
-.info {
-  float: right;
-} */
+
 
 .picture{
   height: 500px;

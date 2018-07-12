@@ -59,8 +59,6 @@
                             <li data-target="#my-slider" data-slide-to="4"></li>
                             <li data-target="#my-slider" data-slide-to="5"></li>
                             <li data-target="#my-slider" data-slide-to="6"></li>
-                            <li data-target="#my-slider" data-slide-to="7"></li>
-                            <li data-target="#my-slider" data-slide-to="8"></li>
                         </ol>
 
                         <!-- wrapper for slides-->
@@ -70,49 +68,49 @@
                             <div class="carousel-item active picture">
                                     <img src="assets/images/Slider-1.jpg" alt="firstImage">
                                     <div class="carousel-caption">
-                                        <h1>Test</h1>
+                                        <h1>Montana</h1>
                                     </div>
                                 </div>
 
                             <div class="carousel-item picture">
                                 <img src="assets/images/slider-2.jpg" alt="firstImage">
                                 <div class="carousel-caption">
-                                    <h1>Test</h1>
+                                    <h1>New York, New York</h1>
                                 </div>
                             </div>
                             
                         <div class="carousel-item picture">
                             <img src="assets/images/Slider-3.jpg" alt="firstImage">
                             <div class="carousel-caption">
-                                <h1>Test</h1>
+                                <h1>Rocky Mountain National Park, Colorado</h1>
                             </div>
                         </div>
 
                         <div class="carousel-item picture">
                             <img src="assets/images/Slider-4.jpg" alt="firstImage">
                             <div class="carousel-caption">
-                                <h1>Test</h1>
+                                <h1>Grand Canyon National Park</h1>
                             </div>
                         </div>
                         
                         <div class="carousel-item picture">
                             <img src="assets/images/Slider-5.jpg" alt="firstImage">
                             <div class="carousel-caption">
-                                <h1>Test</h1>
+                                <h1>San Francisco, California</h1>
                             </div>
                         </div>
 
                         <div class="carousel-item picture">
                             <img src="assets/images/Slider-6.jpg" alt="firstImage">
                             <div class="carousel-caption">
-                                <h1>Test</h1>
+                                <h1>Best European Destination 2014</h1>
                             </div>
                         </div>
 
                         <div class="carousel-item picture">
                             <img src="assets/images/Slider-8.jpg" alt="firstImage">
                             <div class="carousel-caption">
-                                <h1>Test</h1>
+                                <h1>Jamaica </h1>
                             </div>
                         </div>
 
@@ -133,32 +131,47 @@
             </div>
         </div>
 
-        <!-- Body Section -->
-        <form id="tripForm">
-          <div class="col-lg-2 col-med-2"></div>
-              <div class="col-lg-8 col-med-9">
-                  <div class="form-group">
-                      <label for="startDate">Start Date</label>
-                      <input type="text" class="form-control" id="startDateInput" aria-describedby="emailHelp" placeholder="Enter email">
-                      <small id="startdateHelp" class="form-text text-muted">Let us know your Start Date.</small>
-                  </div>
-                  <div class="form-group">
-                      <label for="endDate">End Date</label>
-                      <input type="text" class="form-control" id="endDateInput" aria-describedby="emailHelp" placeholder="Enter email">
-                      <small id="enddateHelp" class="form-text text-muted">Let us know your End Date.</small>
-                      </div>
-                  <div class="form-group">
-                      <label for="travelDestination">Travel Destination</label>
-                      <input type="text" class="form-control" id="travelDestinationInput" placeholder="Zipcode">
-                  </div>
-                  <button type="submit" class="btn btn-primary" id="user-submit" >Submit</button>
-                  
-              </div>    
-                  <div class="col-lg-2 col-med-2"></div>
-        </form>
+        <!--Search form -->
+        <div class="row search-form" id="tripForm">
+            <div class="col-lg-2 col-med-2"></div>
+                <div class="col-lg-8 col-lg-8 card">
+                    <div class="card-header">
+                        <h4>Start Your Search</h4>
+                    </div>
+                        
+                    <div class="card-body">
+                        <form >
+                            <div class="form-group">
+                                <label for="startDate">Start Date</label>
+                                <input type="text" class="form-control" id="startDateInput" aria-describedby="emailHelp" placeholder="Start Date">
+                                <small id="startdateHelp" class="form-text text-muted">Let us know your Start Date.</small>
+                            </div>
+                                        
+                            <div class="form-group">
+                                <label for="endDate">End Date</label>
+                                <input type="text" class="form-control" id="endDateInput" aria-describedby="emailHelp" placeholder="End Date">
+                                <small id="enddateHelp" class="form-text text-muted">Let us know your End Date.</small>
+                            </div>
+                                        
+                            <div class="form-group">
+                            <label for="travelDestination">Travel Destination</label>
+                            <input type="text" class="form-control" id="travelDestinationInput" placeholder="Zip Code">
+                            </div>
+                    <!-- closes card body -->
+                    </div>
+                            <div class="card-footer">            
+                                <button type="submit" class="btn btn-primary" id="user-submit" >Submit</button>     
+                            </div>       
+                        </form>
+                <!-- closes card         -->
+                </div>        
+            <div class="col-lg-2 col-med-2"></div>
+        <!-- closes Form row     -->
+        </div>
 
+
+        <!-- three body divs -->
         <div class="row" id="body">
-
             <div class="col-lg-4 mb-4">
                 <div class="card h-100">
                         <!-- align-items-end, center or start to align vertically -->
@@ -167,7 +180,7 @@
                         <h4>Hotels</h4>
                     </div>
                     <div class="card-body" id="hotels">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary" id="save-hotels">Save Hotels</a>
@@ -178,6 +191,7 @@
 
 
             <div class="col-lg-4 mb-4">
+
                     <div class="card h-100">
                             <!-- align-items-end, center or start to align vertically -->
                         <div class="card-header p-0 d-flex align-items-end justify-content-center card-heading-height">
@@ -190,8 +204,10 @@
                         <div class="card-footer">
                             <a href="#" class="btn btn-primary" id="save-restaurants">Save Restaurants</a>
                         </div>
+
                     </div>
                 </div>
+            </div>
 
                 <div class="col-lg-4 mb-4">
                         <div class="card h-100">
@@ -201,7 +217,7 @@
                                 <h4>Events</h4>
                             </div>
                             <div class="card-body" id="events">
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+
                             </div>
                             <div class="card-footer">
                                 <a href="#" class="btn btn-primary" id="save-events">Save Events</a>
@@ -211,7 +227,6 @@
 
             <!-- closes row "Body"-->
         </div>
-        
 
         <!-- Footer -->
         <footer class="py-5 bg-dark my-footer">
